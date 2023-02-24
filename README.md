@@ -9,13 +9,15 @@ conda create -y -n beyond_env python=3.9 enlighten cupy pkg-config compilers lib
 conda activate beyond_env
 pip install beautifultable
 pip install ffcv
+pip install einops
+
 ```
 
 Enter the desired dataset folder (CIFAR100/TinyImagenet) and execute the following commands :
 
 1. Create Datasets (only required the first time you set things up)
 ```
-python make_dataset.py 
+python scripts/make_dataset.py 
 ```
 
 2. Train Networks with various ablations
