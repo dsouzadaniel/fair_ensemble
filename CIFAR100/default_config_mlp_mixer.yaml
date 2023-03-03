@@ -1,0 +1,31 @@
+seed:
+  default: 789
+  model_init: 789
+  batch_order: 789
+data:
+  gpu: 1
+  num_workers: 12
+  train_dataset: ./dataset_ffcv/cifar_train.beton
+  eval_dataset: ./dataset_ffcv/cifar_test.beton
+training:
+  optim_name: adam
+  scheduler_name: mlp_mixer_default
+  batch_size: 128
+  epochs: 300
+  lr: 0.001
+  min_lr: 0.000001
+  cutmix_beta: 1
+  cutmix_prob: 0.5
+  weight_decay: 5e-5
+  label_smoothing: 0.1
+  num_workers: 12
+eval:
+  lr_tta: false
+logging:
+  log_level: 2
+exp:
+  folder: ./Experiments/CIFAR100_MLP_Mixer/
+  ablation: temp
+  ix: 0
+model:
+  model_name: mlp_mixer

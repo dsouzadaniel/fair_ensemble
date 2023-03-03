@@ -1,0 +1,31 @@
+seed:
+  default: 789
+  model_init: 789
+  batch_order: 789
+  DA: 789
+data:
+  gpu: 1
+  num_workers: 12
+  train_dataset: ./dataset_ffcv/tinyimagenet_train.beton
+  eval_dataset: ./dataset_ffcv/tinyimagenet_val.beton
+training:
+  optim_name: sgd
+  scheduler_name: vit_default
+  batch_size: 512
+  epochs: 100
+  lr: 0.1
+  momentum: 0.9
+  lr_peak_epoch: 10
+  weight_decay: 5e-4
+  label_smoothing: 0.1
+  num_workers: 12
+eval:
+  lr_tta: false
+logging:
+  log_level: 2
+exp:
+  folder: ./Experiments/TINYIMAGENET_Res34_20_lr_0.2/
+  ablation: temp
+  ix: 0
+model:
+  model_name: resnet34

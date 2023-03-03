@@ -1,0 +1,31 @@
+seed:
+  default: 789
+  model_init: 789
+  batch_order: 789
+  DA: 789
+data:
+  gpu: 1
+  num_workers: 4
+  train_dataset: ./dataset_ffcv/tinyimagenet_train.beton
+  eval_dataset: ./dataset_ffcv/tinyimagenet_val.beton
+training:
+  optim_name: adamw
+  scheduler_name: vit_default
+  da_recipe: vit
+  batch_size: 128
+  epochs: 100
+  lr: 0.003
+  min_lr: 1e-6
+  weight_decay: 0.05
+  label_smoothing: 0.1
+  num_workers: 8
+eval:
+  lr_tta: false
+logging:
+  log_level: 2
+exp:
+  folder: ./Experiments/TINYIMAGENET_ViT_20/
+  ablation: temp
+  ix: 0
+model:
+  model_name: vit
